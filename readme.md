@@ -7,19 +7,19 @@ very simple php class to transfer your crypto currencies on Bittrex to your curr
 ## Installation
 
 ### Download sources from github or use composer to install: 
-```
+```sh
 composer require tomasnikl/bittrex-currency-converter
 ```
 
 
 ### Include to your site/project and initialize BittrexCurrencyConverter class
-```
+```php
 $bittrex = new BittrexCurrencyConverter('YOUR_BITTREX_API_KEY', 'YOUR_BITTREX_API_SECRET');
 ```
 
 
 ### Run the magic :)
-```
+```php
 $bittrex = new BittrexCurrencyConverter('YOUR_BITTREX_API_KEY', 'YOUR_BITTREX_API_SECRET');
 
 $items = $bittrex
@@ -35,7 +35,7 @@ Examples are located in example folder.
 
 code:
 
-```
+```php
 $bittrex = new BittrexCurrencyConverter('YOUR_BITTREX_API_KEY', 'YOUR_BITTREX_API_SECRET');
 
 $items = $bittrex
@@ -45,7 +45,7 @@ $items = $bittrex
 
 returns:
 
-```
+```php
 // your crypto currencies in your Bittrex account
 Array
 (
@@ -107,7 +107,7 @@ Array
 
 code:
 
-```
+```php
 $bittrex = new BittrexCurrencyConverter('YOUR_BITTREX_API_KEY', 'YOUR_BITTREX_API_SECRET');
 
 $items = $bittrex
@@ -118,7 +118,7 @@ $items = $bittrex
 
 returns:
 
-```
+```php
 // your crypto currencies in your Bittrex account
 Array
 (
@@ -187,7 +187,7 @@ If you have crypto in your wallets, you can add to code too.
 
 code:
 
-```
+```php
 $bittrex = new BittrexCurrencyConverter('YOUR_BITTREX_API_KEY', 'YOUR_BITTREX_API_SECRET');
 
 $items = $bittrex
@@ -200,7 +200,7 @@ $items = $bittrex
 
 returns:
 
-```
+```php
 // your crypto currencies in your Bittrex account
 Array
 (
@@ -288,3 +288,8 @@ Array
 )
 ```
 
+## Buy me a beer
+You can buy me a beer via BTC. My BTC wallet address is:
+```
+14KBa1cBzQg5gEce2Pnu9Wtrqs4sPAAakp
+```

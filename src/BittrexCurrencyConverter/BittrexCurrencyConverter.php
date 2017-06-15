@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class BittrexWatcher
+ * Class BittrexCurrencyConverter
  */
-class BittrexWatcher
+class BittrexCurrencyConverter
 {
     /**
      * @var string

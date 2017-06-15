@@ -1,0 +1,20 @@
+{
+    "name": "tomasnikl/bittrex-currency-converter",
+    "description": "Very simple php class to transfer your crypto currencies on Bittrex to your currency (USD, EUR, CZK, GBP....)",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tomas Nikl",
+            "email": "tomasnikl@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "BittrexCurrencyConverter": "src/"
+        }
+    }
+}

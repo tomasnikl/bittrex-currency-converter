@@ -1,8 +1,8 @@
 <?php
 
-include __DIR__ . '/../src/BittrexWatcher/BittrexWatcher.php';
+include __DIR__ . '/../src/BittrexCurrencyConverter/BittrexCurrencyConverter.php';
 
-$bittrex = new BittrexWatcher('a09fd0857fc242b0b3e6a4bbc1cfd849', 'a22fa927595c4fc39af32c79faaaf8c8');
+$bittrex = new BittrexCurrencyConverter('a09fd0857fc242b0b3e6a4bbc1cfd849', 'a22fa927595c4fc39af32c79faaaf8c8');
 
 $items = $bittrex
     ->fetchCoins()

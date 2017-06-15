@@ -119,6 +119,12 @@ class BittrexCurrencyConverter
     {
         $this->setActualRates();
 
+        $total = [
+            'valueInBtc' => 0,
+            'valueInUsd' => 0,
+            'valueInMyCurrency' => 0,
+        ];
+
         foreach($this->coins as $code => $value) {
             $this->results[strtolower($code)] = [
                 'symbol' => $code,
@@ -126,10 +132,32 @@ class BittrexCurrencyConverter
                 'valueInBtc' => $this->convertCoinToBtc($code, $value),
                 'valueInUsd' => $this->convertBtcToCurrency('USD', $code, $value),
                 'valueInMyCurrency' => $this->convertBtcToCurrency($this->currency, $code, $value),
+                'progress' => [
+                    '1h' => $this->getPercentchange($code, '1h'),
+                    '24h' => $this->getPercentchange($code, '24h'),
+                    '7d' => $this->getPercentchange($code, '7d')
+                ]
             ];
+
+            $total['valueInBtc'] += $this->results[strtolower($code)]['valueInBtc'];
+            $total['valueInUsd'] += $this->results[strtolower($code)]['valueInUsd'];
+            $total['valueInMyCurrency'] += $this->results[strtolower($code)]['valueInMyCurrency'];
         }
 
+        $this->results['total'] = $total;
+
         return $this->results;
+    }
+
+    private function getPercentchange($cryptoSymbol, $changeName)
+    {
+        if(array_key_exists(strtolower($cryptoSymbol), $this->rates)) {
+            $key = 'percent_change_' . strtolower($changeName);
+            if(!isset($this->rates[strtolower($cryptoSymbol)]->$key)) throw new Exception('Currency change status doesn\'t exists.');
+            return $this->rates[strtolower($cryptoSymbol)]->$key;
+        }else{
+            throw new Exception('Crypto currency code doesn\'t exists.');
+        }
     }
 
     private function convertBtcToCurrency($moneySymbol, $cryptoSymbol, $balance = 0)

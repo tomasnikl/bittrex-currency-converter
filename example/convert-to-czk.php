@@ -6,7 +6,7 @@ $bittrex = new BittrexCurrencyConverter('YOUR_BITTREX_API_KEY', 'YOUR_BITTREX_AP
 
 $items = $bittrex
     ->fetchCoins()
-    ->setCurrency('USD')
+    ->setCurrency('CZK')
     ->convert();
 
 echo '<pre>';
